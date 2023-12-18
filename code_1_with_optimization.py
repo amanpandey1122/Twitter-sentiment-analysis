@@ -15,14 +15,14 @@ from sklearn.metrics import accuracy_score, classification_report
 
 # Function to clean text data
 def clean_text(text):
-    if not isinstance(text, str):
+    if not isinstance(text,str):
         return ""  # Handle non-string values
-    text = text.lower()
-    text = re.sub(r'http\S+|www\S+|https\S+', '', text, flags=re.MULTILINE)  # Remove URLs
-    text = re.sub(r'\@w+|\#','', text)  # Remove @ and #
-    text = re.sub(r'\d+', '', text)  # Remove numbers
-    text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
-    text = re.sub(r'[^\w\s]', '', text)  # Remove punctuations
+    text=text.lower()
+    text=re.sub(r'http\S+|www\S+|https\S+', '', text, flags=re.MULTILINE)  # Remove URLs
+    text=re.sub(r'\@w+|\#','', text)  # Remove @ and #
+    text=re.sub(r'\d+', '', text)  # Remove numbers
+    text=re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
+    text=re.sub(r'[^\w\s]', '', text)  # Remove punctuations
     return text
 
 # Load datasets
